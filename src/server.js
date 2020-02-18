@@ -1,6 +1,7 @@
 const express = require('express');
 const ip = require('ip');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const routes = require('./routes');
 
 const app = express();
@@ -16,10 +17,10 @@ mongoose.connect(
     useCreateIndex: true
   }
 );
-
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 
-app.listen(port, host, err =>
+app.listen(port, err =>
   !err ? console.log(host + ':' + port) : console.log(err)
 );

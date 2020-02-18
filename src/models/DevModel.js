@@ -6,7 +6,7 @@ const getGitHubInfo = async github_username => {
   const api = await axios.get(
     `https://api.github.com/users/${github_username}`
   );
-
+  api.data.name = api.data.name || api.data.login;
   return api.data;
 };
 
@@ -17,9 +17,7 @@ exports.createDev = async ({ github_username, techs, latitude, longitude }) => {
 
   if (dev) return { message: 'Dev já cadastrado!' };
 
-  const { name = login, avatar_url, bio } = await getGitHubInfo(
-    github_username
-  );
+  const { name, avatar_url, bio } = await getGitHubInfo(github_username);
 
   const techsArray = parseArray(techs);
   const location = {
