@@ -1,0 +1,32 @@
+Arguments: 
+  /home/alexjununo/Documents/node-v12.13.1-linux-x64/bin/node /usr/share/yarn/bin/yarn.js add express
+
+PATH: 
+  /home/alexjununo/Documents/node-v12.13.1-linux-x64/bin:/home/alexjununo/.zplugin/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/alexjununo/.fzf/bin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  12.13.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: read ECONNRESET
+      at TLSWrap.onStreamRead (internal/stream_base_commons.js:201:27)
+
+npm manifest: 
+  {
+    "name": "findev-server",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
