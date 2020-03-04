@@ -6,7 +6,6 @@ const routes = require('./routes');
 
 const app = express();
 
-const host = ip.address();
 const port = 3333;
 
 mongoose.connect(
@@ -15,12 +14,13 @@ mongoose.connect(
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
-  }
+  },
+  err => (!err ? console.log('Banco conectado') : console.log(err))
 );
 app.use(cors());
 app.use(express.json());
 app.use(routes);
 
 app.listen(port, err =>
-  !err ? console.log(host + ':' + port) : console.log(err)
+  !err ? console.log('Porta:' + port) : console.log(err)
 );
